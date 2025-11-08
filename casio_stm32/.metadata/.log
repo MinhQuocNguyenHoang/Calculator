@@ -1,0 +1,31 @@
+!SESSION 2025-10-27 19:57:38.609 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  .
+Command-line arguments:  -os linux -ws gtk -arch x86_64 .
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-10-27 19:57:49.679
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-10-27 19:57:49.680
+!MESSAGE Log4j2 initialized with config file /home/minhquoc/Projects/Calculator/casio_stm32/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-10-27 19:57:54.245
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2025-10-27 20:00:17.663 -----------------------------------------------
+eclipse.buildId=Version 1.19.0
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-10-27 20:00:26.519
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-10-27 20:00:26.520
+!MESSAGE Log4j2 initialized with config file /home/minhquoc/Projects/Calculator/casio_stm32/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-10-27 20:00:29.680
+!MESSAGE Started RMI Server, listening on port 41337

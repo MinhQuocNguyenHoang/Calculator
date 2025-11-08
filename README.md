@@ -1,76 +1,60 @@
-Giới thiệu
+# Calculator
 
-Dự án này xây dựng một máy tính cầm tay đơn giản dựa trên vi điều khiển STM32, sử dụng bàn phím ma trận (Keypad) để nhập dữ liệu và LCD 16x2 để hiển thị kết quả.
-Mục tiêu:
+## Overview
+This project implements a simple handheld calculator based on an STM32 microcontroller.  
+It uses a **5x4 matrix keypad created from button** for input and a **16x2 LCD** (HD44780) to display results.
 
-Thực hành lập trình trên STM32 với FreeRTOS.
+## Hardware Used
+- MCU: STM32<br>
+- Keypad: Created from 20 button (5x4 matrix)<br>
+- Display: LCD 16x02 via GPIO 4 bit (driver HD44780)<br>
+- Power supply + voltage regulator<br>>
+- Custom PCB designed with Altium Designer<br>
 
-Xử lý nhập liệu từ bàn phím.
+## Software Environment
+- Language: Embedded C
+- Framework: STM32CubeIDE, STM32CubeMX<br>
+- RTOS: FreeRTOS real-time kernel<br>
+- Tools: VS Code, Altium Designer (PCB design)<br>
 
-Thực hiện các phép tính số học cơ bản và phương trình bậc 1, bậc 2.
+## Project Structure
+```
+    Calculator/
+    ├─ casio_altium # PCB design # schematic
+    ├─ casio_stm32 #MCU code
+    ├─ Readme.md # This files
+    ├─ video_Demo # Demo video
+    ├─ layout.pdf # PCB layout
+    ├─ schematic.pdf # Schematic
+```
 
-Phần cứng sử dụng
+## Features
+- Input numbers and operations via Keypad.<br>  
+- Display input and results on LCD 16x2.<br>  
+- Supported operations:  
+  - Addition, subtraction, multiplication, division<br>  
+  - Solve linear equations (`ax + b = 0`)<br>  
+  - Solve quadratic equations (`ax² + bx + c = 0`)<br>  
+- Keypad debounce to prevent mis-entry.<br> 
 
-STM32 (dòng STM32F103C8T6 “Blue Pill”)
+## ## Wiring / Schematic
+- [PCB Layout](./layout.pdf) 
+- [Schematic](./schematic.pdf) 
 
-Bàn phím ma trận 4x4
+## Getting Started
+1. Install STM32CubeIDE<br>
+2. Prepare ST-LINK<br>
+3. Connect ST-LINK to stm32 via 4 pin (VCC, GND, SCLK, SWDIO)<br>
+4. Run code<br>
 
-Màn hình LCD 16x2 (HD44780 driver)
+## Demo
+- [Demo](./video_Demo/demo.mp4)
 
-Nguồn 5V + breadboard / PCB custom
+## Operating principle
+- Project has 2 mode: operation and solve the quation<br>
+- Mode operation: Can solve a lot of operation include interger, float and double<br>
+- Mode solve the equation: Can solve the quadratic equations and superlative equations<br>
 
-Công nghệ & Công cụ
-
-Ngôn ngữ: Embedded C
-
-Framework: FreeRTOS (task scheduling)
-
-IDE: STM32CubeIDE / Keil C
-
-Thiết kế mạch: Altium Designer
-
-Tính năng chính
-
-Nhập số và phép toán từ Keypad.
-
-Hiển thị quá trình nhập và kết quả trên LCD 16x2.
-
-Hỗ trợ:
-
-Cộng, trừ, nhân, chia
-
-Giải phương trình bậc nhất, bậc hai
-
-Xử lý chống dội phím (debounce) để nhập chính xác.
-
-FreeRTOS: sử dụng một task duy nhất để xử lý tuần tự:
-
-Đọc phím → xử lý phép tính → cập nhật LCD.
-
-Cách triển khai: 
-
-clone repo
-
-Mở project trong STM32CubeIDE.
-
-Build & flash code vào STM32.
-
-Cách sử dụng
-
-Bấm phím số → hiển thị trên LCD.
-
-Bấm các phím +, -, *, / để chọn phép tính.
-
-Bấm = để hiển thị kết quả.
-
-Với phương trình: nhập dạng ax+b=0 hoặc ax^2+bx+c=0, máy sẽ tính nghiệm.
-
-Demo: đính kèm ở folder video demo ở trên
-
-Hướng phát triển
-
-Mở rộng chức năng (logarit, sin/cos, ma trận).
-
-Nâng cấp giao diện sang LCD đồ họa hoặc TFT
-
-Tác giả: Nguyễn Hoàng Minh Quốc
+## Author
+Nguyễn Hoàng Minh Quốc<br>
+Github: @MinhQuocNguyenHoang
