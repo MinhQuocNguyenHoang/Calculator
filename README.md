@@ -5,7 +5,7 @@ This project implements a simple handheld calculator based on an STM32 microcont
 It uses a **5x4 matrix keypad created from button** for input and a **16x2 LCD** (HD44780) to display results.
 
 ## Hardware Used
-- MCU: STM32<br>
+- MCU: STM32F030K6T6<br>
 - Keypad: Created from 20 button (5x4 matrix)<br>
 - Display: LCD 16x02 via GPIO 4 bit (driver HD44780)<br>
 - Power supply + voltage regulator<br>
