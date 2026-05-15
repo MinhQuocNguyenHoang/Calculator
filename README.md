@@ -1,62 +1,149 @@
-# Calculator
-
-## Overview
-This project implements a simple handheld calculator based on an STM32 microcontroller.  
-It uses a **5x4 matrix keypad created from button** for input and a **16x2 LCD** (HD44780) to display results.
-
-## Hardware Used
-- MCU: STM32F030K6T6<br>
-- Keypad: Created from 20 button (5x4 matrix)<br>
-- Display: LCD 16x02 via GPIO 4 bit (driver HD44780)<br>
-- Power supply + voltage regulator<br>
-- Custom PCB designed with Altium Designer<br>
-
-## Software Environment
-- Language: Embedded C
-- Framework: STM32CubeIDE, STM32CubeMX<br>
-- RTOS: FreeRTOS real-time kernel<br>
-- Tools: VS Code, Altium Designer (PCB design)<br>
-
-## Project Structure
-```
-    Calculator/
-    ├─ casio_altium # PCB design # schematic
-    ├─ casio_stm32 #MCU code
-    ├─ Readme.md # This files
-    ├─ video_Demo # Demo video
-    ├─ layout.pdf # PCB layout
-    ├─ schematic.pdf # Schematic
-```
-
-## Features
-- Input numbers and operations via Keypad.<br>  
-- Display input and results on LCD 16x2.<br>  
-- Supported operations:  
-  - Addition, subtraction, multiplication, division<br>  
-  - Solve linear equations (`ax + b = 0`)<br>  
-  - Solve quadratic equations (`ax² + bx + c = 0`)<br>  
-- Keypad debounce to prevent mis-entry.<br> 
-
-## Wiring / Schematic
-- [PCB Layout](./layout.pdf) 
-- [Schematic](./schematic.pdf) 
-
-## Getting Started
-1. Install STM32CubeIDE<br>
-2. Prepare ST-LINK<br>
-3. Connect ST-LINK to stm32 via 4 pin (VCC, GND, SCLK, SWDIO)<br>
-4. Run code<br>
+# STM32 Calculator - Custom Embedded Calculator System
 
 ## Demo
-<div align="center">
-    <video src="https://github.com/user-attachments/assets/50ce03a3-e70b-4b47-9426-682c65b7a507" alt="epcb archery game" height=200/>
-</div>
 
-## Operating principle
-- Project has 2 mode: operation and solve the quation<br>
-- Mode operation: Can solve a lot of operation include interger, float and double<br>
-- Mode solve the equation: Can solve the quadratic equations and superlative equations<br>
+<div align="center"> <video src="https://github.com/user-attachments/assets/50ce03a3-e70b-4b47-9426-682c65b7a507" alt="Calculator beta" height=200/> </div>
+
+---
+
+## Documentation
+
+| File | Description |
+|---|---|
+| [README.md](README.md) | Main project overview, hardware information, firmware features, and operating principle |
+| [layout.pdf](layout.pdf) | PCB layout designed using Altium Designer |
+| [schematic.pdf](schematic.pdf) | Hardware schematic diagram |
+| [casio_stm32](./casio_stm32) | STM32 firmware source code |
+| [casio_altium](./casio_altium) | PCB and schematic source files |
+
+---
+
+## Introduction
+
+This project implements a handheld calculator system based on the STM32F030K6T6 microcontroller.
+
+The calculator uses a custom-built 5x4 matrix keypad for user input and a 16x2 LCD (HD44780 driver) for displaying expressions and calculation results.
+
+The project demonstrates embedded firmware development concepts including:
+
+- GPIO control
+- Matrix keypad scanning
+- LCD interfacing in 4-bit mode
+- FreeRTOS task management
+- Embedded mathematical processing
+- PCB design using Altium Designer
+
+---
+
+## Hardware
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="./images/hardware.png" width="420"/>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <strong><em>Figure 1:</em></strong> STM32 Calculator Hardware Prototype
+</p>
+
+### Hardware Components
+
+| Component | Description |
+|---|---|
+| MCU | STM32F030K6T6 |
+| Input | 5x4 matrix keypad built using push buttons |
+| Display | LCD 16x2 using HD44780 driver |
+| RTOS | FreeRTOS |
+| PCB | Custom PCB designed using Altium Designer |
+
+---
+
+## Features
+
+### Arithmetic Operations
+- Addition
+- Subtraction
+- Multiplication
+- Division
+
+### Equation Solving
+- Linear equations (`ax + b = 0`)
+- Quadratic equations (`ax² + bx + c = 0`)
+
+### Embedded Features
+- LCD 16x2 display output
+- Matrix keypad scanning
+- Key debounce handling
+- FreeRTOS-based task scheduling
+
+---
+
+## System Operating Principle
+
+The calculator firmware operates in two main modes:
+
+### 1. Arithmetic Operation Mode
+This mode performs standard arithmetic calculations using keypad input and displays the results on the LCD.
+
+### 2. Equation Solving Mode
+This mode allows users to solve:
+- Linear equations
+- Quadratic equations
+
+The firmware processes keypad inputs, validates expressions, performs mathematical computations, and updates the LCD in real time.
+
+---
+
+## PCB Layout
+
+<p align="center">
+  <img src="./images/layout.pdf" width="700"/>
+</p>
+
+<p align="center">
+  <strong><em>Figure 1:</em></strong> PCB Layout
+</p>
+
+---
+
+## Schematic
+
+<p align="center">
+  <img src="./images/schematic.pdf" width="900"/>
+</p>
+
+<p align="center">
+  <strong><em>Figure 2:</em></strong> Hardware Schematic
+</p>
+---
+
+## Getting Started
+
+1. Open the project using STM32CubeIDE
+2. Generate code using STM32CubeMX
+3. Build the firmware
+4. Flash the firmware using ST-LINK
+5. Power the board and test calculator functions
+
+---
+
+## Software Environment
+
+| Tool | Purpose |
+|---|---|
+| STM32CubeIDE | Firmware development |
+| STM32CubeMX | Peripheral configuration |
+| FreeRTOS | Real-time operating system |
+| Altium Designer | PCB and schematic design |
+| VS Code | Source code editing |
+
+---
 
 ## Author
-Nguyễn Hoàng Minh Quốc<br>
-Github: @MinhQuocNguyenHoang
+
+Nguyễn Hoàng Minh Quốc
+
+GitHub: @MinhQuocNguyenHoang
