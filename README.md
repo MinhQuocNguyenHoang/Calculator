@@ -37,7 +37,7 @@ It uses a **5x4 matrix keypad created from button** for input and a **16x2 LCD**
   - Solve quadratic equations (`ax² + bx + c = 0`)<br>  
 - Keypad debounce to prevent mis-entry.<br> 
 
-## ## Wiring / Schematic
+## Wiring / Schematic
 - [PCB Layout](./layout.pdf) 
 - [Schematic](./schematic.pdf) 
 
