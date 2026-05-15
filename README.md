@@ -100,7 +100,9 @@ The firmware processes keypad inputs, validates expressions, performs mathematic
 ## PCB Layout
 
 <p align="center">
-  <img src="./images/layout.pdf" width="700"/>
+  <img src="./images/layout-1.png" width="30%"/>
+  <img src="./images/layout-2.png" width="30%"/>
+  <img src="./images/layout-3.png" width="30%"/>
 </p>
 
 <p align="center">
@@ -112,7 +114,7 @@ The firmware processes keypad inputs, validates expressions, performs mathematic
 ## Schematic
 
 <p align="center">
-  <img src="./images/schematic.pdf" width="900"/>
+  <img src="./images/schematic-1.png" width="900"/>
 </p>
 
 <p align="center">
