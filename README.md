@@ -143,9 +143,18 @@ The firmware processes keypad inputs, validates expressions, performs mathematic
 | VS Code | Source code editing |
 
 ---
+<h3>📫 Contact Me</h3>
 
-## Author
-
-Nguyễn Hoàng Minh Quốc
-
-GitHub: @MinhQuocNguyenHoang
+<p>
+  <a href="https://github.com/MinhQuocNguyenHoang">
+    <img src="https://img.shields.io/badge/GitHub-MinhQuocNguyenHoang-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+  
+  <a href="https://www.linkedin.com/in/minhquoc-hcmus/">
+    <img src="https://img.shields.io/badge/LinkedIn-Minh%20Quoc-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+  
+  <a href="mailto:quoc20053008@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-quoc20053008%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
+</p>
