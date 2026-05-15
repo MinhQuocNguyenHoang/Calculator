@@ -48,7 +48,9 @@ It uses a **5x4 matrix keypad created from button** for input and a **16x2 LCD**
 4. Run code<br>
 
 ## Demo
-- [Demo](./video_Demo/demo.mp4)
+<div align="center">
+    <video src="https://github.com/user-attachments/assets/1f6162f4-bec4-4333-93ac-6c22745dd307" alt="epcb archery game" height=200/>
+</div>
 
 ## Operating principle
 - Project has 2 mode: operation and solve the quation<br>
