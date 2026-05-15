@@ -11,8 +11,8 @@
 | File | Description |
 |---|---|
 | [README.md](README.md) | Main project overview, hardware information, firmware features, and operating principle |
-| [layout.pdf](./images/layout-1.png) | PCB layout designed using Altium Designer |
-| [schematic.pdf](./images/schematic-1.png) | Hardware schematic diagram |
+| [layout](./images/layout-1.png) | PCB layout designed using Altium Designer |
+| [schematic](./images/schematic-1.png) | Hardware schematic diagram |
 | [casio_stm32](./casio_stm32) | STM32 firmware source code |
 | [casio_altium](./casio_altium) | PCB and schematic source files |
 
