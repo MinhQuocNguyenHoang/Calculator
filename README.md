@@ -49,7 +49,7 @@ It uses a **5x4 matrix keypad created from button** for input and a **16x2 LCD**
 
 ## Demo
 <div align="center">
-    <video src="https://github.com/user-attachments/assets/1f6162f4-bec4-4333-93ac-6c22745dd307" alt="epcb archery game" height=200/>
+    <video src="https://github.com/user-attachments/assets/50ce03a3-e70b-4b47-9426-682c65b7a507" alt="epcb archery game" height=200/>
 </div>
 
 ## Operating principle
