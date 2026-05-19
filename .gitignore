@@ -1,6 +1,11 @@
-.metadata
-video_Demo
-casio_stm32/.metadata
-casio_altium/Project Logs for casio
-casio_altium/__Previews
-casio_altium/Project Outputs for casio
+# STM32CubeIDE / Eclipse metadata
+.metadata/
+**/.metadata/
+
+# Demo video folder
+video_Demo/
+
+# Altium generated folders
+**/Project Logs for */
+**/Project Outputs for */
+**/__Previews/
