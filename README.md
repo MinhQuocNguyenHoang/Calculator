@@ -143,7 +143,7 @@ The firmware processes keypad inputs, validates expressions, performs mathematic
 | VS Code | Source code editing |
 
 ---
-<h3>📫 Contact Me</h3>
+<h3>Contact Me</h3>
 
 <p>
   <a href="https://github.com/MinhQuocNguyenHoang">
