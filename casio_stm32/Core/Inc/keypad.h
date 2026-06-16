@@ -11,6 +11,8 @@
 #include "main.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "clock.h"
+#include "gpio.h"
 
 extern char keypad[4][5];
 

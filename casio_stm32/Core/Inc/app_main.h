@@ -11,6 +11,7 @@
 #include "calculator_engine.h"
 #include "keypad.h"
 #include "LCD_driver.h"
+#include "system_stm32_init.h"
 
 #ifdef __cplusplus
 extern "C"
