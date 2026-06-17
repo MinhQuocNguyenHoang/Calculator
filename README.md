@@ -1,4 +1,4 @@
-# STM32 Calculator - Custom Embedded Calculator System
+# STM32 Pocket Calculator (Casio-like)
 
 ## Demo
 
@@ -29,7 +29,7 @@ The project demonstrates embedded firmware development concepts including:
 - GPIO control
 - Matrix keypad scanning
 - LCD interfacing in 4-bit mode
-- FreeRTOS task management
+- Bare-metal programming (register-level STM32 development)
 - Embedded mathematical processing
 - PCB design using Altium Designer
 
@@ -56,44 +56,98 @@ The project demonstrates embedded firmware development concepts including:
 | MCU | STM32F030K6T6 |
 | Input | 5x4 matrix keypad built using push buttons |
 | Display | LCD 16x2 using HD44780 driver |
-| RTOS | FreeRTOS |
+| Flash and debug | STLINK V2.0 |
 | PCB | Custom PCB designed using Altium Designer |
 
 ---
 
 ## Features
-
-### Arithmetic Operations
-- Addition
-- Subtraction
-- Multiplication
-- Division
-
-### Equation Solving
-- Linear equations (`ax + b = 0`)
-- Quadratic equations (`ax² + bx + c = 0`)
-
-### Embedded Features
-- LCD 16x2 display output
-- Matrix keypad scanning
-- Key debounce handling
-- FreeRTOS-based task scheduling
+   - Basic Arithmetic: Support for addition, subtraction, multiplication, and division.
+   - Advanced Expressions: Handles nested parentheses () and operator precedence (PEMDAS).
+   - Equation Solver: Finds roots of continuous functions $f(x) = 0$ using numerical methods.
+   - Bare-metal Efficiency: Ultra-fast startup and low memory footprint due to register-level programming.
+   - Robust Input: 4x5 matrix keypad scanning with software debounce and Backspace/Clear support.
 
 ---
 
 ## System Operating Principle
+This project was developed as a personal embedded systems project to explore bare-metal STM32 programming and low-level hardware control.
 
-The calculator firmware operates in two main modes:
+### Register-Level Hardware Control
 
-### 1. Arithmetic Operation Mode
-This mode performs standard arithmetic calculations using keypad input and displays the results on the LCD.
+One of the main objectives of this project was to understand how STM32 peripherals operate at the register level. Therefore, all hardware initialization and control are implemented by directly accessing peripheral registers instead of using HAL libraries.
 
-### 2. Equation Solving Mode
-This mode allows users to solve:
-- Linear equations
-- Quadratic equations
+This approach allowed me to:
 
-The firmware processes keypad inputs, validates expressions, performs mathematical computations, and updates the LCD in real time.
+* Configure GPIO and clock peripherals manually.
+* Gain a deeper understanding of STM32 hardware architecture.
+* Reduce software overhead and keep the firmware lightweight.
+* Develop custom peripheral drivers from scratch.
+
+### Equation Solving Algorithm
+
+The calculator includes a Solver mode capable of finding the roots of equations in the form:
+
+```text
+f(x) = 0
+```
+
+The algorithm combines interval scanning with the Bisection Method.
+
+#### Root Scanning
+
+The firmware scans the range:
+
+```text
+[-10000, 10000]
+```
+
+using a step size of **1.0**.
+
+For each interval `[l, r]`, it checks:
+
+```text
+f(l) * f(r) <= 0
+```
+
+If the sign changes, a root is assumed to exist within that interval according to the Intermediate Value Theorem.
+
+#### Bisection Method
+
+After detecting a valid interval, the firmware repeatedly halves the search range:
+
+1. Compute the midpoint:
+
+   ```text
+   mid = (l + r) / 2
+   ```
+
+2. Evaluate `f(mid)`.
+
+3. Determine which half contains the root.
+
+4. Update the interval boundaries.
+
+5. Repeat until the desired accuracy is reached.
+
+The solver stops when the error becomes smaller than:
+
+```text
+ε = 10^-4
+```
+
+### Matrix Keypad Scanning
+
+To support 20 input buttons while minimizing GPIO usage, a 4×5 matrix keypad is implemented.
+
+The firmware scans the keypad by:
+
+1. Driving one row at a time.
+2. Reading the column states.
+3. Identifying the pressed key from the row-column combination.
+4. Applying software debouncing to prevent false key detection.
+
+This method reduces hardware complexity while maintaining reliable input handling.
 
 ---
 
@@ -124,23 +178,65 @@ The firmware processes keypad inputs, validates expressions, performs mathematic
 
 ## Getting Started
 
-1. Open the project using STM32CubeIDE
-2. Generate code using STM32CubeMX
-3. Build the firmware
-4. Flash the firmware using ST-LINK
-5. Power the board and test calculator functions
+### Prerequisites
+
+#### Software Requirements
+Before you begin, ensure you have the following tools installed on your system:
+- **ARM GCC Toolchain**: The cross-compiler for ARM Cortex-M microcontrollers (`arm-none-eabi-gcc`).
+- **GNU Make**: A build automation tool to manage the compilation process.
+- **STM32CubeProgrammer**: Official tool to flash the firmware into the MCU.
+
+#### Hardware Requirements
+- STM32F030K6TX Development Board.
+- 16x2 Character LCD (HD44780 compatible).
+- 4x5 Matrix Keypad.
+- ST-Link V2 Programmer.
+- Please refer to the schematic above for component connections.
+
+### Installation and Build Process
+
+#### 1. Clone the Project
+Download the repository to your local machine using git:
+```bash
+git clone https://github.com/MinhQuocNguyenHoang/Calculator.git
+cd Calculator
+```
+
+#### 2. Configure Toolchain Path (Important)
+Since the project uses a Makefile, you must ensure the compiler path matches your local installation:
+1. Navigate to the `casio_stm32/` directory.
+2. Open the `Makefile` with a text editor.
+3. Locate the variable defining the toolchain path (e.g., `BINPATH` or `GCC_PATH`).
+4. Update this path to point to the `bin` folder of your installed ARM GCC Toolchain.
+   *Example for Windows:* `GCC_PATH = C:/ST/STM32CubeIDE/tools/bin`
+   *Example for Linux:* `GCC_PATH = /usr/bin`
+
+#### 3. Build the Firmware
+Open your terminal in the `casio_stm32/` directory and run the following command:
+```bash
+make
+```
+Once the process completes:
+- Temporary object files will be stored in the `build/` directory.
+- The final firmware files (`.bin`, `.hex`, `.elf`) will be generated inside the `build/` folder.
+
+#### 4. Flashing the Firmware
+1. Connect your STM32F030K6TX board to your computer via the ST-Link V2.
+2. Launch **STM32CubeProgrammer**.
+3. Connect to the target device.
+4. Select the generated `build/stm32_calculator.bin` file.
+5. Click **Start Programming** to upload the firmware to the microcontroller at the address 0x08000000
 
 ---
-
 ## Software Environment
 
 | Tool | Purpose |
-|---|---|
-| STM32CubeIDE | Firmware development |
-| STM32CubeMX | Peripheral configuration |
-| FreeRTOS | Real-time operating system |
-| Altium Designer | PCB and schematic design |
-| VS Code | Source code editing |
+|------|---------|
+| ARM GCC Toolchain | Cross-compiler for ARM Cortex-M0 microcontrollers |
+| GNU Make | Build automation system for managing compilation |
+| Altium Designer | Hardware design (Schematic and PCB Layout) |
+| STM32CubeProgrammer | Firmware flashing and device management |
+| VS Code | Primary environment for source code development |
 
 ---
 <h3>Contact Me</h3>
