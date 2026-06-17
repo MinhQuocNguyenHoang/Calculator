@@ -1,10 +1,3 @@
-/*
- * keypad.h
- *
- *  Created on: Oct 6, 2025
- *      Author: ADMIN
- */
-
 #ifndef INC_KEYPAD_H_
 #define INC_KEYPAD_H_
 #include "clock.h"
