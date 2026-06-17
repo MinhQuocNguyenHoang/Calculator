@@ -22,7 +22,7 @@ typedef struct
     volatile uint32_t CSR;
 } RCC_RegDef_t;
 
-#define RCC ((RCC_RegDef_t *)RCC_BASE_ADDR)
+#define RCC ((RCC_RegDef_t *)RCC_BASE_ADDRESS)
 
 
 /*=================================
@@ -50,4 +50,10 @@ typedef struct
 ===================================*/
 
 void system_clock_enable(void);
-void gpio_clock_enable(GPIO);
+void gpioa_clock_enable();
+void gpiob_clock_enable();
+void gpioc_clock_enable();
+void gpiod_clock_enable();
+void gpiof_clock_enable();
+
+#endif /*__CLOCK_H__*/

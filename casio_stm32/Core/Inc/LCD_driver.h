@@ -7,9 +7,6 @@
 
 #ifndef INC_LCD_DRIVER_H_
 #define INC_LCD_DRIVER_H_
-#include "FreeRTOS.h"
-#include "task.h"
-#include "stdarg.h"
 #include "clock.h"
 #include "gpio.h"
 

@@ -9,6 +9,18 @@
 #define PCLK1_FREQ_HZ    24000000U
 #define PCLK2_FREQ_HZ    48000000U
 
+/*SYSTEM TICK TIMER*/
+#define SysTick_BASE_ADDR 0xE000E010 
+
+typedef struct {
+    volatile uint32_t CSR;
+    volatile uint32_t RVR;
+    volatile uint32_t CVR;
+    volatile uint32_t CALIB;
+}SysTick_RegDef_t;
+
+#define SysTick ((SysTick_RegDef_t*)SysTick_BASE_ADDR)
+
 /* System init */
 void system_stm32_init(void);
 

@@ -1,4 +1,4 @@
-#include "system_stm32.h"
+#include "system_stm32_init.h"
 #include "clock.h"
 
 /* SysTick CTRL bits */
@@ -9,7 +9,7 @@ static volatile uint32_t g_ms_ticks = 0;
 
 /* ================= SYSTEM INIT ================= */
 void system_stm32_init(void){
-    rcc_system_clock_enable();
+    system_clock_enable();
     systick_init();
 }
 
@@ -19,17 +19,17 @@ void systick_init(void)
 {
     g_ms_ticks = 0;
 
-    SysTick->CTRL = 0;
+    SysTick->CSR = 0;
 
     /*
        SysTick chạy bằng SYSCLK = 48MHz.
        Muốn ngắt mỗi 1ms:
        LOAD = 48MHz / 1000 - 1 = 48000 - 1
     */
-    SysTick->LOAD = (SYSCLK_FREQ / 1000U) - 1U;
-    SysTick->VAL = 0;
+    SysTick->RVR = (SYSCLK_FREQ_HZ / 1000U) - 1U;
+    SysTick->CVR = 0;
 
-    SysTick->CTRL = SYSTICK_CTRL_CLKSOURCE |
+    SysTick->CSR = SYSTICK_CTRL_CLKSOURCE |
                     SYSTICK_CTRL_TICKINT |
                     SYSTICK_CTRL_ENABLE;
 }

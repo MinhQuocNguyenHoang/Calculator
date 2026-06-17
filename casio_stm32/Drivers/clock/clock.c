@@ -42,3 +42,28 @@ void system_clock_enable(void){
     RCC->CFGR &= ~(0xFU << 18);     // clear PLLMUL
     RCC->CFGR |=  (0x4U << 18);     // PLL x6
 }
+
+void gpioa_clock_enable(){
+    RCC->AHBENR &= ~(0x1U<<17);
+    RCC->AHBENR |= (0x1U<<17);
+}
+
+void gpiob_clock_enable(){
+    RCC->AHBENR &= ~(0x1U<<18);
+    RCC->AHBENR |= (0x1U<<18);
+}
+
+void gpioc_clock_enable(){
+    RCC->AHBENR &= ~(0x1U<<19);
+    RCC->AHBENR |= (0x1U<<19);
+}
+
+void gpiod_clock_enable(){
+    RCC->AHBENR &= ~(0x1U<<20);
+    RCC->AHBENR |= (0x1U<<20);
+}
+
+void gpiof_clock_enable(){
+    RCC->AHBENR &= ~(0x1U<<22);
+    RCC->AHBENR |= (0x1U<<22);
+}

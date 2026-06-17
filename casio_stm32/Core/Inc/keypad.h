@@ -7,12 +7,9 @@
 
 #ifndef INC_KEYPAD_H_
 #define INC_KEYPAD_H_
-
-#include "main.h"
-#include "FreeRTOS.h"
-#include "task.h"
 #include "clock.h"
 #include "gpio.h"
+#include "system_stm32_init.h"
 
 extern char keypad[4][5];
 
@@ -22,6 +19,7 @@ extern "C"
 #endif
 // Public Function
 char keyPad_scan(void);
+void keyPad_init();
 
 #ifdef __cplusplus
 }

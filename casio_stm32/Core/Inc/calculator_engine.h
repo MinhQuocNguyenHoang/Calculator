@@ -7,10 +7,7 @@
 
 #ifndef INC_CALCULA_ENGINEER_H_
 #define INC_CALCULA_ENGINEER_H_
-#include "FreeRTOS.h"
-#include "queue.h"
 #include "string.h"
-#include "semphr.h"
 #include "stdbool.h"
 #include "math.h"
 #include "ctype.h"
