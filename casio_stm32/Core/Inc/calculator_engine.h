@@ -1,10 +1,3 @@
-/*
- * calcula_engineer.h
- *
- *  Created on: Oct 6, 2025
- *      Author: ADMIN
- */
-
 #ifndef INC_CALCULA_ENGINEER_H_
 #define INC_CALCULA_ENGINEER_H_
 #include "string.h"
