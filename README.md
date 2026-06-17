@@ -208,8 +208,6 @@ Since the project uses a Makefile, you must ensure the compiler path matches you
 2. Open the `Makefile` with a text editor.
 3. Locate the variable defining the toolchain path (e.g., `BINPATH` or `GCC_PATH`).
 4. Update this path to point to the `bin` folder of your installed ARM GCC Toolchain.
-   *Example for Windows:* `GCC_PATH = C:/ST/STM32CubeIDE/tools/bin`
-   *Example for Linux:* `GCC_PATH = /usr/bin`
 
 #### 3. Build the Firmware
 Open your terminal in the `casio_stm32/` directory and run the following command:
