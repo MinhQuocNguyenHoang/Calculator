@@ -237,6 +237,11 @@ Once the process completes:
 | VS Code | Primary environment for source code development |
 
 ---
+## References
+- [Reference Manual](https://www.st.com/resource/en/reference_manual/rm0360-stm32f030x4x6x8xc-and-stm32f070x6xb-advanced-armbased-32bit-mcus-stmicroelectronics.pdf)
+- [Programing Manual](https://www.st.com/resource/en/programming_manual/pm0215-stm32f0-series-cortexm0-programming-manual-stmicroelectronics.pdf)
+- [Datasheet](https://www.st.com/resource/en/datasheet/stm32f030f4.pdf)
+
 <h3>Contact Me</h3>
 
 <p>
