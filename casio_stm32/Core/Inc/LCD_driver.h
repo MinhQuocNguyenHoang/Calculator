@@ -1,10 +1,3 @@
-/*
- * LCD_driver.h
- *
- *  Created on: Oct 6, 2025
- *      Author: ADMIN
- */
-
 #ifndef INC_LCD_DRIVER_H_
 #define INC_LCD_DRIVER_H_
 #include "clock.h"
