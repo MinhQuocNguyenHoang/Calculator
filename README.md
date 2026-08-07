@@ -1,5 +1,10 @@
 # STM32 Pocket Calculator (Casio-like)
 
+<div align="center">
+
+<img src="https://komarev.com/ghpvc/?username=MinhQuocNguyenHoang&repo=Calculator&label=Repo+Traffic&color=blue&style=flat-square" alt="Repo Traffic"/>
+</div>
+
 ## Demo
 
 <div align="center"> <video src="https://github.com/user-attachments/assets/50ce03a3-e70b-4b47-9426-682c65b7a507" alt="Calculator beta" height=200/> </div>
